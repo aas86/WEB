@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Quadratic Equation</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div>
-    <h3 class="header"> Квадратное уравнение</h3>
+    <h3 class="header"> Введите коэффициенты квадратного уравнения</h3>
 </div>
-<form  id="111" action="/quadraticEquation.js" method="post">
-   <div class="a-coef-field">
-       <label for="a">Коэффициент a</label>
-       <input type="text" name="a-coef" id="a" />
-   </div>
-    <div class="b-coef-field">
-        <label for="b">Коэффициент b</label>
-        <input type="text" name="b-coef" id="b"/>
-    </div>
-    <div class="c-coef-field">
-        <label for="c">Коэффициент c</label>
-        <input type="text" name="c-coef" id="c"/>
+<form id="111" action="/quadraticEquation.js" method="post">
+    <div class="form">
+        <div class="a-coef">
+            <label for="a">Коэффициент a</label>
+            <input type="text" name="a-coef" id="a"/>
+        </div>
+        <div class="b-coef">
+            <label for="b">Коэффициент b</label>
+            <input type="text" name="b-coef" id="b"/>
+        </div>
+        <div class="c-coef">
+            <label for="c">Коэффициент c</label>
+            <input type="text" name="c-coef" id="c"/>
+        </div>
+
+
     </div>
     <div class="submit-button">
-        <input id="button" type="button" value="Решить уравнение" />
+        <input id="button" type="button" value="Решить уравнение" onclick=""/>
     </div>
 </form>
 <script src="quadraticEquation.js"></script>
