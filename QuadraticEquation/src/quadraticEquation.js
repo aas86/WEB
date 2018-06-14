@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var button = document.getElementById("button");
-    button.addEventListener('click', getData);
+    button.addEventListener("click", getData);
 
     function getData() {
         var a = document.getElementById("a").value;
