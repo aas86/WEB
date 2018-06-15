@@ -1,16 +1,20 @@
 .header {
     text-align: center;
 }
-.form > div > input{
+
+.form > div > input {
     width: 30px;
     height: 22px;
 }
-.a-coef{
-padding-bottom: 10px;
-}
-.b-coef{
+
+.a-coef {
     padding-bottom: 10px;
 }
-.c-coef{
+
+.b-coef {
+    padding-bottom: 10px;
+}
+
+.c-coef {
     padding-bottom: 10px;
 }
