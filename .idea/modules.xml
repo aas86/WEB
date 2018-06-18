@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Gabriel/Gabriel.iml" filepath="$PROJECT_DIR$/Gabriel/Gabriel.iml" />
       <module fileurl="file://$PROJECT_DIR$/HTML/HTML.iml" filepath="$PROJECT_DIR$/HTML/HTML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lists/Lists.iml" filepath="$PROJECT_DIR$/Lists/Lists.iml" />
       <module fileurl="file://$PROJECT_DIR$/QuadraticEquation/QuadraticEquation.iml" filepath="$PROJECT_DIR$/QuadraticEquation/QuadraticEquation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web.iml" filepath="$PROJECT_DIR$/Web.iml" />
     </modules>
