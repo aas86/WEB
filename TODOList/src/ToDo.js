@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
         var text = input.value;
 
-        if (text !== ""){
+        if (text === ""){
+            return;
+        }
             var li = document.createElement("li");
             li.innerHTML = text;
 
@@ -18,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             list.appendChild(li);
             li.appendChild(deleteButton);
-        } else{
-            return;
-        }
+
 
         deleteButton.addEventListener('click', function () {
             li.remove();
