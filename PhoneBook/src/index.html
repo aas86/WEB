@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhoneBook</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+<div class="table-wrapper">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Номер телефона</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+          <!--   <tr myAttr="id">
+                  <th class="id">№</th>
+                  <th>Фамилия</th>
+                  <th class="name">Имя</th>
+                  <th>Номер телефона</th>
+                  <th></th>
+              </tr>-->
+
+        </tbody>
+    </table>
+</div>
+<div class="form-wrapper">
+    <form>
+        <label>
+            Имя <input id="name" type="text" required/>
+        </label>
+        <label>
+            Фамилия<input id="surname" type="text" required/>
+        </label>
+        <label>
+            № Телефона<input id="tel-number" type="text" required/>
+        </label>
+        <button id="add-button" type="button">Добавить</button>
+    </form>
+</div>
+<script src="jquery-3.3.1.js"></script>
+<script src="PhoneBook.js"></script>
+</body>
+</html>

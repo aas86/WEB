@@ -1,0 +1,23 @@
+.table{
+    margin: auto;
+    width: 80%;
+}
+
+.table > thead  th{
+    background-color: #4f81bd;
+    color : white;
+    border: 5px solid #ffffff;
+    border-bottom: 1px solid #ffffff;;
+}
+
+.table > tbody th{
+    background-color: #d0d8e8;
+    color: #000;
+    border: 5px solid #ffffff;
+    border-top: 1px solid #ffffff;
+}
+
+.form-wrapper{
+    margin: 60px 30px 30px 100px;
+}
+
