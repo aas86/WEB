@@ -1,31 +1,48 @@
 $(document).ready(function () {
     var addButton = $("#add-button"); // Получили кнопку
-    var id = 1;
+    // var id = 1;
     $(addButton).on('click', function (e) {
+        var name = $("#name").val();           // Получил значение поля ИМЯ
+        var surname = $("#surname").val();     // Получил значение поля ФАМИЛИЯ
+        var phone = $("#tel-number").val();    // Получил значение поля №телефона
 
-        var name = $("#name").val();
-        var surname = $("#surname").val();
-        var phone = $("#tel-number").val();
+        var form = $(".contact-form");
+        if (name === "") {
+            form.find("#name").style();
+            return;
+        } else if (surname === "") {
+            form.find("#surname").style.borderColor = "red";
+            return;
+        } else if (phone === "") {
+            form.find("#phone").style.borderColor = "red";
+            return;
+        }
 
-        $("<tr><th class='id'></th><th class='surname'></th><th class='name'></th>" +
-            "<th class='tel-number'></th><th></th></tr>")
-            .appendTo(".table-body");
 
-        var recordNumber =  $("tr:last > th.id");
-        recordNumber.text(id);
+        var tr = $("<tr><th></th><th></th><th></th><th></th>" +
+            "<th><button id='delete-button' type='button'> Удалить</button></th></tr>");
+        tr.find("th:eq(1)").text(name);
+        tr.find("th:eq(2)").text(surname);
+        tr.find("th:eq(3)").text(phone);
+        /*tr.find("th:eq(0)").text(id);
+        id++;*/
 
-        var currentName = $("tr:last th.name");
-        currentName.text(name);
+        $(".table").find("tbody").append(tr);
+        setRowsNumber();
 
-        var currentSurname = $("tr:last th.surname");
-        currentSurname.text(surname);
+        $(".contact-form").find("input").val("");
 
-        var currentTel = $("tr:last th.tel-number");
-        currentTel.text(phone);
-        id++;
-
-        $("#name").val("");
-        $("#surname").val("");
-        $("#tel-number").val("");
+        tr.find("#delete-button").on("click", function () {
+            $(this).closest("tr").remove();
+            setRowsNumber();
+        });
     });
+
+    function setRowsNumber() {
+        $(".table").find("tbody").find("tr").each(function (i, tr) {
+            $(tr).find("th:eq(0)").text(i + 1);
+        });
+
+    }
+
 });
