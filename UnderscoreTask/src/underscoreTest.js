@@ -27,6 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Средний возраст");
     console.log(averageAge);
 
+    //То же самое, но через reduce и list.length
+    var average = _.reduce(personList, function (memo, element) {
+        return memo + element.age;
+    }, 0) / personList.length;
+
+    console.log("Средний возраст");
+    console.log(average);
+
     // Получить список людей с возрастом от 20 до 30 включительно,
     // отсортировать их по возрастанию возраста
 
@@ -34,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .filter(function (element) {
             return element.age >= 20 && element.age <= 30;
         })
-        .sortBy("age");
+        .sortBy("age").value();
     console.log("Список людей с возрастом от 20 до 30 включительно, отсортированный по возрастанию возраста");
     console.log(filteredPersonList);
 
@@ -44,8 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .map(function (el) { // Эта функция вызовется для каждого элемента и рез-ом общим будет её применение к каждому элементу
             el.fullName = el.name + " " + el.lastName; // Добавление полей налету
             return el;
-        });
+        })
+        .value();
     console.log("Всем добавил поле FullName");
     console.log(newPersonList);
+// ТО же самое, но через each
+    var newList = _.each(personList, function (element) {
+            element.fullName = element.name + " " + element.lastName // Добавление полей налету
+        });
+    console.log(newList);
 
 });
