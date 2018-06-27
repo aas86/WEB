@@ -9,13 +9,17 @@ $(document).ready(function () {
         if(name !== "" && surname !== "" && phone !== ""){
             var tr = $("<tr><th></th><th></th><th></th><th></th>" +
                     "<th><button id='delete-button' type='button'> Удалить</button></th></tr>"); // Создаём строку
+            // создали jquery объект (строка таблицы)
                 setInput();
+                // функция find ищет всех детей th у строки tr
                 tr.find("th:eq(1)").text(name);
                 tr.find("th:eq(2)").text(surname);
                 tr.find("th:eq(3)").text(phone);
                 /*tr.find("th:eq(0)").text(id);
                 id++;*/
 
+                // Создаётся объект jquery из тега с классом .table, ищется его ребёнок с тегом tbody,
+                // в его конец вставляется созданная выше tr
                 $(".table").find("tbody").append(tr);
                 setRowsNumber();
         } else{

@@ -1,0 +1,16 @@
+.input-width{
+    width : 200px;
+    margin-bottom: 10px;
+}
+.table{
+    margin-top: 10px;
+}
+
+.table td{
+  margin-top: 10px;
+    vertical-align: middle;
+}
+
+.delete-button{
+    margin-top: 15px;
+}

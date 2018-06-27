@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Всем добавил поле FullName");
     console.log(newPersonList);
 // ТО же самое, но через each
-    var newList = _.each(personList, function (element) {
+     _.each(personList, function (element) {
             element.fullName = element.name + " " + element.lastName // Добавление полей налету
         });
-    console.log(newList);
+    console.log(personList);
 
 });
