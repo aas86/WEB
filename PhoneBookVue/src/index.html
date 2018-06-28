@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,12 +14,15 @@
     </div>
 
 
-    <form>
-        <input v-model="name" type="text" class="form-control input-width" placeholder="Введите имя"
+    <form id="form">
+        <input v-model="name" v-bind:style="{backgroundColor : activeColor}" type="text" class="form-control input-width"
+               placeholder="Введите имя"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-        <input v-model="lastName" type="text" class="form-control input-width" placeholder="Введите фамилию"
+        <input v-model="lastName" v-bind:style="{backgroundColor: activeColor}" type="text" class="form-control input-width"
+               placeholder="Введите фамилию"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-        <input v-model="telNumber" type="text" class="form-control input-width" placeholder="Введите № телефона"
+        <input v-model="telNumber" v-bind:style="{backgroundColor: activeColor}" type="text" class="form-control input-width"
+               placeholder="Введите № телефона"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
 
         <button type="button" @click="addItem" class="btn btn-outline-dark">Добавить</button>

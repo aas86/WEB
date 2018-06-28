@@ -5,12 +5,17 @@ var vm = new Vue({
                   // v-model="lastName v-model="telNumber") у input'ов
         lastName: "",
         telNumber: "",
-        persons: []
+        persons: [],
+        activeColor : ''
     },
     methods: {
         addItem: function () {
             if (this.name === "" || this.lastName === "" || this.telNumber === "") {
+                
+                this.activeColor = "#FFDAD1";
                 return;
+            } else{
+                this.activeColor = "white";
             }
             this.persons.push({
                 name: this.name,
@@ -28,3 +33,4 @@ var vm = new Vue({
         }
     }
 });
+
