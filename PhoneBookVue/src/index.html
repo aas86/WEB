@@ -15,17 +15,19 @@
 
 
     <form id="form">
-        <input v-model="name" v-bind:style="{backgroundColor : activeColor}" type="text" class="form-control input-width"
+        <input v-model="name" v-bind:style="{backgroundColor : colorName}" type="text" class="form-control input-width"
                placeholder="Введите имя"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-        <input v-model="lastName" v-bind:style="{backgroundColor: activeColor}" type="text" class="form-control input-width"
+        <input v-model="lastName" v-bind:style="{backgroundColor: colorLastName}" type="text" class="form-control input-width"
                placeholder="Введите фамилию"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-        <input v-model="telNumber" v-bind:style="{backgroundColor: activeColor}" type="text" class="form-control input-width"
+        <input v-model="telNumber" v-bind:style="{backgroundColor: colorTelNumber}" type="text" class="form-control input-width"
                placeholder="Введите № телефона"
                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
 
-        <button type="button" @click="addItem" class="btn btn-outline-dark">Добавить</button>
+
+
+        <button type="button" @click="addItem"  class="btn btn-outline-dark">Добавить</button>
     </form>
 
     <table class="table table-striped table-bordered">

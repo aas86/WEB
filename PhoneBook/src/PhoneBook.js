@@ -23,7 +23,7 @@ $(document).ready(function () {
                 $(".table").find("tbody").append(tr);
                 setRowsNumber();
         } else{
-                var form = $(".contact-form input");
+                var form = $(".contact-form input"); // Получаю набор объектов jquery всех input'ов в .contact-form
                 form.each(function(){
                     var temp = $(this).val();
                     if(temp === ""){

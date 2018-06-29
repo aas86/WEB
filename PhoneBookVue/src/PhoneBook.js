@@ -6,18 +6,18 @@ var vm = new Vue({
         lastName: "",
         telNumber: "",
         persons: [],
-        activeColor : ''
+        colorName : '',
+        colorLastName : '',
+        colorTelNumber : '',
+        inputs : []
     },
     methods: {
         addItem: function () {
-            if (this.name === "" || this.lastName === "" || this.telNumber === "") {
-                
-                this.activeColor = "#FFDAD1";
+            if (!this.formValidation()){
                 return;
-            } else{
-                this.activeColor = "white";
             }
-            this.persons.push({
+            if(!this.telNumberValidation()){
+                this.persons.push({
                 name: this.name,
                 lastName: this.lastName,
                 telNumber: this.telNumber
@@ -25,11 +25,61 @@ var vm = new Vue({
             this.name = "";
             this.lastName = "";
             this.telNumber = "";
+            this.colorWhite();
+            } else {
+                alert("Контакт с таким номером уже существует!");
+            }
         },
-        deleteItem: function (item) {
-            this.persons = this.persons.filter(function (element) {
-                return element !== item;
+
+        telNumberValidation : function(){
+            var currentTelNumber = this.telNumber;
+            return this.persons.some(function(e){
+                console.log(e.telNumber);
+                console.log(currentTelNumber);
+                return e.telNumber === currentTelNumber;
             });
+        },
+
+        formValidation : function(){
+            var temp = [];
+                if (this.name === ""){
+                    this.colorName = "#FFDAD1";
+                    temp.push(1);
+                } else {
+                    this.colorName = "#FFFFFF";
+                }
+                if (this.lastName === ""){
+                    this.colorLastName = "#FFDAD1";
+                    temp.push(1);
+                } else {
+                    this.colorLastName = "#FFFFFF";
+                }
+                if (this.telNumber === ""){
+                    this.colorTelNumber = "#FFDAD1";
+                    temp.push(1);
+                } else if(isNaN(Number(this.telNumber))){
+                    alert("Номер телефона не может состоять из букв!");
+                    temp.push(1);
+                } else {
+                    this.colorTelNumber = "#FFFFFF";
+                }
+                return temp.length === 0;
+        },
+        
+        deleteItem: function (item) {
+            if(confirm("Действительно удалить?")){
+                this.persons = this.persons.filter(function (element) {
+                    return element !== item;
+                });
+            this.colorWhite();
+            }
+            this.colorWhite();
+
+        },
+        colorWhite : function(){
+            this.colorName = "#FFFFFF";
+            this.colorLastName = "#FFFFFF";
+            this.colorTelNumber = "#FFFFFF";
         }
     }
 });
